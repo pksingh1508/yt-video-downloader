@@ -31,10 +31,10 @@ Open **http://localhost:5173**. The API runs on `127.0.0.1:3001`. Setup download
 
 ### Upload presets
 
-| Preset | Clip limit | File limit | Intended upload |
-| --- | --- | --- | --- |
-| X Standard (default) | 140 seconds | 512 MB | All X accounts |
-| X Premium | Under 4 hours | 16 GB | Premium accounts on x.com / iOS |
+| Preset               | Clip limit    | File limit | Intended upload                 |
+| -------------------- | ------------- | ---------- | ------------------------------- |
+| X Standard (default) | 140 seconds   | 512 MB     | All X accounts                  |
+| X Premium            | Under 4 hours | 16 GB      | Premium accounts on x.com / iOS |
 
 These are conservative presets based on [X's consumer web upload guide](https://help.x.com/en/using-x/x-videos) and [Premium video guide](https://help.x.com/en/using-x/premium-longer-videos), checked October 14, 2026. Premium clips longer than 2 hours automatically use 720p. Premium Android has a shorter duration limit, so use x.com or iOS for longer exports. Encoding choices also follow [X's media recommendations](https://docs.x.com/x-api/media/quickstart/best-practices). API upload entitlements can differ from consumer upload limits; this app prepares files for manual upload.
 
@@ -52,15 +52,15 @@ YouTube and yt-dlp's official JavaScript challenge component service are contact
 
 Copy `.env.example` to `.env` if you need overrides. Development and production scripts load this file. It is ignored by Git.
 
-| Variable | Default | Purpose |
-| --- | --- | --- |
-| `PORT` | `3001` | API / production server port |
-| `WEB_PORT` | `5173` | Vite development port |
-| `DATA_DIR` | `.data` | Export storage directory |
-| `YTDLP_PATH` | `.tools/yt-dlp` | Custom downloader executable |
-| `FFMPEG_PATH` | npm FFmpeg binary | Custom FFmpeg executable |
-| `FFPROBE_PATH` | npm FFprobe binary | Custom FFprobe executable |
-| `YTDLP_COOKIES_FILE` | unset | Optional Netscape-format cookies file for your own YouTube session |
+| Variable             | Default            | Purpose                                                            |
+| -------------------- | ------------------ | ------------------------------------------------------------------ |
+| `PORT`               | `3001`             | API / production server port                                       |
+| `WEB_PORT`           | `5173`             | Vite development port                                              |
+| `DATA_DIR`           | `.data`            | Export storage directory                                           |
+| `YTDLP_PATH`         | `.tools/yt-dlp`    | Custom downloader executable                                       |
+| `FFMPEG_PATH`        | npm FFmpeg binary  | Custom FFmpeg executable                                           |
+| `FFPROBE_PATH`       | npm FFprobe binary | Custom FFprobe executable                                          |
+| `YTDLP_COOKIES_FILE` | unset              | Optional Netscape-format cookies file for your own YouTube session |
 
 When overriding FFmpeg, put an executable named `ffmpeg` alongside the specified binary so yt-dlp can find it. Keep cookies files outside the repository and do not share them. They are authentication credentials. Use cookies only for videos your account is authorized to access.
 
