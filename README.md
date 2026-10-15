@@ -20,6 +20,14 @@ Open **http://localhost:5173**. The API runs on `127.0.0.1:3001`. Setup download
 4. Click **Prepare for X**. When verification finishes, preview the final video and click **Download MP4**.
 5. Attach the downloaded file to a post on X.
 
+## Appearance
+
+Use the sun, moon, and monitor buttons in the header to choose **Light**, **Dark**, or **System** appearance. Your choice is saved locally; System follows changes to your computer’s appearance. The saved theme is applied before the page paints, including in the production build.
+
+The interface uses locally bundled Geist, Manrope, and Geist Mono variable fonts. Framer Motion provides subtle navigation, button, preview, progress, and notification transitions. Animations respect the operating system’s reduced-motion setting. Layouts adapt from mobile screens to wide desktops.
+
+Design references: [Linear](https://linear.app/), [Vercel typography](https://vercel.com/geist/typography), and [Motion accessibility](https://motion.dev/docs/react-accessibility).
+
 ## What the export does
 
 - Downloads the selected time range with yt-dlp and FFmpeg. Requests accurate cuts at the clip boundaries.
